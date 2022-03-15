@@ -1,5 +1,5 @@
 {
-  "name": "quotidian-component-library",
+  "name": "@tuantruong625/quotidian-component-library",
   "version": "0.0.1",
   "description": "Minimal react component library",
   "scripts": {
@@ -22,5 +22,8 @@
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/tuantruong625"
+  }
 }
