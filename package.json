@@ -5,6 +5,9 @@
   "scripts": {
     "rollup": "rollup -c",
     "test": "jest",
+    "test-watch": "jest --watchAll",
+    "test-coverage": "jest --coverage",
+    "view-coverage": "open coverage/lcov-report/index.html",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
