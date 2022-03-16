@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import './Button.css'
+
 export interface ButtonProps {
   label: string;
 }
@@ -10,8 +12,8 @@ const QuotidianButton = styled.button`
   border-radius: 5px;
 `
 
-const Button = ({ label, ...props }: ButtonProps) => {
-  return <QuotidianButton {...props}>{label}</QuotidianButton>;
+const Button = ({ label }: ButtonProps) => {
+  return <QuotidianButton>{label}</QuotidianButton>;
 };
 
 export default Button;

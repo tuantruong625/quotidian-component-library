@@ -1,6 +1,6 @@
 {
   "name": "@tuantruong625/quotidian-component-library",
-  "version": "0.0.6",
+  "version": "0.0.10",
   "description": "Minimal react component library",
   "scripts": {
     "rollup": "rollup -c"
@@ -18,8 +18,13 @@
     "rollup": "^2.70.1",
     "rollup-plugin-dts": "^4.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
     "styled-components": "^5.3.3",
     "typescript": "^4.6.2"
+  },
+  "peerDependencies": {
+    "@types/styled-components": "^5.1.24",
+    "styled-components": "^5.3.3"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
