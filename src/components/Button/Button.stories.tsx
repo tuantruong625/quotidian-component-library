@@ -15,9 +15,6 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
  label: 'Primary button',
+ shape: ''
 };
 
-export const ClickMe = Template.bind({});
-ClickMe.args = {
- label: 'Click Me',
-};
