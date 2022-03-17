@@ -5,7 +5,7 @@ import './Button.css'
 export type ButtonProps = {
   label: string,
   disabled?: boolean,
-  shape?: "sm" | "md" | "lg" | "full",
+  shape?: "sm" | "md" | "lg" | "full" | undefined,
   onClick?: () => void
 }
 
