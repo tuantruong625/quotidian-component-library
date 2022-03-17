@@ -3,7 +3,7 @@ import 'jest-styled-components'
 import { render, screen } from '@testing-library/react'
 import Button from './Button'
 
-const renderButton = (shape = '') => {
+const renderButton = (shape: any) => {
  render(<Button label="Button" shape={shape} />)
 }
 describe('Button', () => {
