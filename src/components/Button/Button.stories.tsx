@@ -17,7 +17,3 @@ Primary.args = {
  label: 'Primary button',
 };
 
-export const ClickMe = Template.bind({});
-ClickMe.args = {
- label: 'Click Me',
-};
