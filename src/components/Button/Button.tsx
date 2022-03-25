@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { black, gray1, gray3, gray4, gray7 } from "../../utils/colours";
+import { black, gray1, gray3, gray4, gray7, white } from "../../utils/colours";
 import './Button.css'
 
 export type ButtonProps = {
@@ -66,7 +66,7 @@ const QuotidianButton = styled.button<StyleProps>`
   }
 
   ${({ variant }) => variant === 'outline' && css`
-    background-color: white;
+    background-color: ${white};
     color: ${gray7};
     border: 1px solid ${gray7};
 
@@ -77,7 +77,7 @@ const QuotidianButton = styled.button<StyleProps>`
   `}
 
   ${({ variant }) => variant === 'text' && css`
-    background-color: white;
+    background-color: ${white};
     color: ${gray7};
 
     &:active {

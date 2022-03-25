@@ -2,6 +2,7 @@ import React from 'react'
 import 'jest-styled-components'
 import { render, screen } from '@testing-library/react'
 import Button from './Button'
+import { gray1, gray7, white } from '../../utils/colours'
 
 const renderButton = (shape?: any, variant?: any) => {
  render(<Button label="Button" shape={shape} variant={variant} />)
@@ -12,25 +13,25 @@ describe('Button', () => {
   describe('primary variant', () => {
    it('button has primary styles', () => {
     renderButton('sm', 'primary')
-    expect(screen.getByText('Button')).toHaveStyleRule('background-color', '#2E3440')
-    expect(screen.getByText('Button')).toHaveStyleRule('color', '#ECEFF4')
+    expect(screen.getByText('Button')).toHaveStyleRule('background-color', `${gray7}`)
+    expect(screen.getByText('Button')).toHaveStyleRule('color', `${gray1}`)
    })
   })
 
   describe('outline variant', () => {
    it('button has outline styles', () => {
     renderButton('sm', 'outline')
-    expect(screen.getByText('Button')).toHaveStyleRule('background-color', 'white')
-    expect(screen.getByText('Button')).toHaveStyleRule('color', '#2E3440')
-    expect(screen.getByText('Button')).toHaveStyleRule('border', '1px solid #2E3440')
+    expect(screen.getByText('Button')).toHaveStyleRule('background-color', `${white}`)
+    expect(screen.getByText('Button')).toHaveStyleRule('color', `${gray7}`)
+    expect(screen.getByText('Button')).toHaveStyleRule('border', `1px solid ${gray7}`)
    })
   })
 
   describe('text variant', () => {
    it('button has text styles', () => {
     renderButton('sm', 'text')
-    expect(screen.getByText('Button')).toHaveStyleRule('background-color', 'white')
-    expect(screen.getByText('Button')).toHaveStyleRule('color', '#2E3440')
+    expect(screen.getByText('Button')).toHaveStyleRule('background-color', `${white}`)
+    expect(screen.getByText('Button')).toHaveStyleRule('color', `${gray7}`)
    })
   })
  })
