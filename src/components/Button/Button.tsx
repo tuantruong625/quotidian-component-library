@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { gray7 } from "../../Utils/colours";
+import { black, gray1, gray3, gray4, gray7 } from "../../utils/colours";
 import './Button.css'
 
 export type ButtonProps = {
@@ -34,7 +34,7 @@ const handleBorderRadius = (size?: string) => {
 const QuotidianButton = styled.button<StyleProps>`
   background-color: ${gray7};
   padding: 0.625rem 0.5rem;
-  color: #ECEFF4;
+  color: ${gray1};
   border: 0;
   cursor: pointer;
   transition: 0.25s;
@@ -53,8 +53,8 @@ const QuotidianButton = styled.button<StyleProps>`
   }
   
   &:disabled {
-    color: #D8DEE9;
-    background-color: #4C566A;
+    color: ${gray3};
+    background-color: ${gray4};
     box-shadow: none;
     transform: translateY(0);
     cursor: not-allowed;
@@ -62,13 +62,13 @@ const QuotidianButton = styled.button<StyleProps>`
 
   &:active {
     transform: translateY(0);
-    box-shadow: inset 3px 3px 2px black;
+    box-shadow: inset 3px 3px 2px ${black};
   }
 
   ${({ variant }) => variant === 'outline' && css`
     background-color: white;
-    color: #2E3440;
-    border: 1px solid #2E3440;
+    color: ${gray7};
+    border: 1px solid ${gray7};
 
     &:active {
       transform: translateY(0);
@@ -78,7 +78,7 @@ const QuotidianButton = styled.button<StyleProps>`
 
   ${({ variant }) => variant === 'text' && css`
     background-color: white;
-    color: #2E3440;
+    color: ${gray7};
 
     &:active {
       transform: translateY(0);
