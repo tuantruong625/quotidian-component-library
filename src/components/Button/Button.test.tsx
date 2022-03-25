@@ -3,10 +3,38 @@ import 'jest-styled-components'
 import { render, screen } from '@testing-library/react'
 import Button from './Button'
 
-const renderButton = (shape: any) => {
- render(<Button label="Button" shape={shape} />)
+const renderButton = (shape?: any, variant?: any) => {
+ render(<Button label="Button" shape={shape} variant={variant} />)
 }
+
 describe('Button', () => {
+ describe('handles variants', () => {
+  describe('primary variant', () => {
+   it('button has primary styles', () => {
+    renderButton('sm', 'primary')
+    expect(screen.getByText('Button')).toHaveStyleRule('background-color', '#2E3440')
+    expect(screen.getByText('Button')).toHaveStyleRule('color', '#ECEFF4')
+   })
+  })
+
+  describe('outline variant', () => {
+   it('button has outline styles', () => {
+    renderButton('sm', 'outline')
+    expect(screen.getByText('Button')).toHaveStyleRule('background-color', 'white')
+    expect(screen.getByText('Button')).toHaveStyleRule('color', '#2E3440')
+    expect(screen.getByText('Button')).toHaveStyleRule('border', '1px solid #2E3440')
+   })
+  })
+
+  describe('text variant', () => {
+   it('button has text styles', () => {
+    renderButton('sm', 'text')
+    expect(screen.getByText('Button')).toHaveStyleRule('background-color', 'white')
+    expect(screen.getByText('Button')).toHaveStyleRule('color', '#2E3440')
+   })
+  })
+ })
+
  describe('handles button shape/border radius', () => {
   describe('shape is sm', () => {
    it('has sm border radius style', () => {

@@ -1,16 +1,18 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import './Button.css'
 
 export type ButtonProps = {
   label: string,
   disabled?: boolean,
   shape?: "sm" | "md" | "lg" | "full" | undefined,
+  variant?: "primary" | "outline" | "text",
   onClick?: () => void
 }
 
 type StyleProps = {
-  shape?: "sm" | "md" | "lg" | "full"
+  shape?: "sm" | "md" | "lg" | "full",
+  variant?: "primary" | "outline" | "text"
 }
 
 const handleBorderRadius = (size?: string) => {
@@ -38,7 +40,7 @@ const QuotidianButton = styled.button<StyleProps>`
   border-radius: ${({ shape }) => handleBorderRadius(shape)};
   transform: translateY(0);
   user-select: none;
-  
+
   &:hover {
     box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
                 0 2px 4px rgba(0,0,0,0.07), 
@@ -61,12 +63,34 @@ const QuotidianButton = styled.button<StyleProps>`
     transform: translateY(0);
     box-shadow: inset 3px 3px 2px black;
   }
+
+  ${({ variant }) => variant === 'outline' && css`
+    background-color: white;
+    color: #2E3440;
+    border: 1px solid #2E3440;
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: inset 3px 3px 2px rgba(0,0,0,0.15);
+    }
+  `}
+
+  ${({ variant }) => variant === 'text' && css`
+    background-color: white;
+    color: #2E3440;
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: inset 3px 3px 2px rgba(0,0,0,0.15);
+    }
+  `}
 `
 
-const Button = ({ label, shape, disabled, ...props }: ButtonProps): JSX.Element => {
+const Button = ({ label, shape, variant = "primary", disabled, ...props }: ButtonProps): JSX.Element => {
   return (
     <QuotidianButton
       shape={shape}
+      variant={variant}
       disabled={disabled}
       {...props}
     >

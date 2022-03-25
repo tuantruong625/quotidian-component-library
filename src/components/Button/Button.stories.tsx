@@ -15,6 +15,21 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
  label: 'Primary button',
- shape: ''
+ shape: undefined,
+ variant: 'primary'
+};
+
+export const Outline = Template.bind({});
+Outline.args = {
+ label: 'Outline button',
+ shape: undefined,
+ variant: 'outline'
+};
+
+export const Text = Template.bind({});
+Text.args = {
+ label: 'Text button',
+ shape: undefined,
+ variant: 'text'
 };
 
