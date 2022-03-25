@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { gray7 } from "../../Utils/colours";
 import './Button.css'
 
 export type ButtonProps = {
@@ -31,7 +32,7 @@ const handleBorderRadius = (size?: string) => {
 }
 
 const QuotidianButton = styled.button<StyleProps>`
-  background-color: #2E3440;
+  background-color: ${gray7};
   padding: 0.625rem 0.5rem;
   color: #ECEFF4;
   border: 0;
