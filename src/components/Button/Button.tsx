@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { black, gray1, gray3, gray4, gray7, white } from "../../utils/colours";
+import { BorderRadius, Colors } from "../../utils";
 import './Button.css'
 
 export type ButtonProps = {
@@ -19,22 +19,22 @@ type StyleProps = {
 const handleBorderRadius = (size?: string) => {
   switch (size) {
     case "sm":
-      return "5px"
+      return `${BorderRadius.sm}`
     case "md":
-      return "10px"
+      return `${BorderRadius.md}`
     case "lg":
-      return "16px"
+      return `${BorderRadius.lg}`
     case "full":
-      return "999px"
+      return `${BorderRadius.full}`
     default:
-      return "0px"
+      return `${BorderRadius.none}`
   }
 }
 
 const QuotidianButton = styled.button<StyleProps>`
-  background-color: ${gray7};
+  background-color: ${Colors.gray7};
   padding: 0.625rem 0.5rem;
-  color: ${gray1};
+  color: ${Colors.gray1};
   border: 0;
   cursor: pointer;
   transition: 0.25s;
@@ -53,8 +53,8 @@ const QuotidianButton = styled.button<StyleProps>`
   }
   
   &:disabled {
-    color: ${gray3};
-    background-color: ${gray4};
+    color: ${Colors.gray3};
+    background-color: ${Colors.gray4};
     box-shadow: none;
     transform: translateY(0);
     cursor: not-allowed;
@@ -62,13 +62,13 @@ const QuotidianButton = styled.button<StyleProps>`
 
   &:active {
     transform: translateY(0);
-    box-shadow: inset 3px 3px 2px ${black};
+    box-shadow: inset 3px 3px 2px ${Colors.black};
   }
 
   ${({ variant }) => variant === 'outline' && css`
-    background-color: ${white};
-    color: ${gray7};
-    border: 1px solid ${gray7};
+    background-color: ${Colors.white};
+    color: ${Colors.gray7};
+    border: 1px solid ${Colors.gray7};
 
     &:active {
       transform: translateY(0);
@@ -77,8 +77,8 @@ const QuotidianButton = styled.button<StyleProps>`
   `}
 
   ${({ variant }) => variant === 'text' && css`
-    background-color: ${white};
-    color: ${gray7};
+    background-color: ${Colors.white};
+    color: ${Colors.gray7};
 
     &:active {
       transform: translateY(0);

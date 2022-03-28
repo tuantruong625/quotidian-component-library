@@ -3,6 +3,7 @@ import 'jest-styled-components'
 import { render, screen } from '@testing-library/react'
 import Button from './Button'
 import { gray1, gray7, white } from '../../utils/colours'
+import { BorderRadius } from '../../utils'
 
 const renderButton = (shape?: any, variant?: any) => {
  render(<Button label="Button" shape={shape} variant={variant} />)
@@ -40,35 +41,35 @@ describe('Button', () => {
   describe('shape is sm', () => {
    it('has sm border radius style', () => {
     renderButton('sm')
-    expect(screen.getByText('Button')).toHaveStyleRule('border-radius', '5px')
+    expect(screen.getByText('Button')).toHaveStyleRule('border-radius', `${BorderRadius.sm}`)
    })
   })
 
   describe('shape is md', () => {
    it('has md border radius style', () => {
     renderButton('md')
-    expect(screen.getByText('Button')).toHaveStyleRule('border-radius', '10px')
+    expect(screen.getByText('Button')).toHaveStyleRule('border-radius', `${BorderRadius.md}`)
    })
   })
 
   describe('shape is lg', () => {
    it('has lg border radius style', () => {
     renderButton('lg')
-    expect(screen.getByText('Button')).toHaveStyleRule('border-radius', '16px')
+    expect(screen.getByText('Button')).toHaveStyleRule('border-radius', `${BorderRadius.lg}`)
    })
   })
 
   describe('shape is full', () => {
    it('has full border radius style', () => {
     renderButton('full')
-    expect(screen.getByText('Button')).toHaveStyleRule('border-radius', '999px')
+    expect(screen.getByText('Button')).toHaveStyleRule('border-radius', `${BorderRadius.full}`)
    })
   })
 
   describe('no shape value is passed', () => {
    it('has no border radius style', () => {
     renderButton('')
-    expect(screen.getByText('Button')).toHaveStyleRule('border-radius', '0px')
+    expect(screen.getByText('Button')).toHaveStyleRule('border-radius', `${BorderRadius.none}`)
    })
   })
  })
