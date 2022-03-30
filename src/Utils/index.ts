@@ -1,3 +1,5 @@
 export { default as Colors } from './colours'
 export { default as Screens } from './screens'
 export { default as Spacing } from './spacing'
+export { default as Typography } from './typography'
+export { default as BorderRadius } from './borderRadius'
