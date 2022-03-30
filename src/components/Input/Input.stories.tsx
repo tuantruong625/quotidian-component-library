@@ -10,8 +10,8 @@ export default {
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
-export const Primary = Template.bind({})
-Primary.args = {
+export const Text = Template.bind({})
+Text.args = {
  type: 'text',
  placeholder: 'Placeholder'
 }
