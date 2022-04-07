@@ -4,6 +4,7 @@ import { Colors } from "../../utils";
 
 const BouncerLoader = styled.div`
  display: flex;
+ justify-content: center;
  align-items: flex-start;
  margin: auto 0;
 
@@ -44,7 +45,7 @@ const BouncerLoader = styled.div`
 
 const Loader = (): JSX.Element => {
  return (
-  <BouncerLoader>
+  <BouncerLoader data-testid="loader">
    <div></div>
    <div></div>
    <div></div>
