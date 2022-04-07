@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { BorderRadius, Colors } from "../../utils";
+import Loader from "../Loader";
 import './Button.css'
 
 export type ButtonProps = {
@@ -8,6 +9,7 @@ export type ButtonProps = {
   disabled?: boolean,
   shape?: "sm" | "md" | "lg" | "full" | undefined,
   variant?: "primary" | "outline" | "text",
+  loading?: boolean,
   onClick?: () => void
 }
 
@@ -87,7 +89,7 @@ const QuotidianButton = styled.button<StyleProps>`
   `}
 `
 
-const Button = ({ label, shape, variant = "primary", disabled, ...props }: ButtonProps): JSX.Element => {
+const Button = ({ label, shape, variant = "primary", disabled, loading, ...props }: ButtonProps): JSX.Element => {
   return (
     <QuotidianButton
       shape={shape}
@@ -95,7 +97,7 @@ const Button = ({ label, shape, variant = "primary", disabled, ...props }: Butto
       disabled={disabled}
       {...props}
     >
-      {label}
+      {loading ? <Loader /> : label}
     </QuotidianButton>
   )
 };

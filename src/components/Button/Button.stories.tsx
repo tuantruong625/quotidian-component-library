@@ -33,3 +33,11 @@ Text.args = {
  variant: 'text'
 };
 
+export const Loading = Template.bind({});
+Loading.args = {
+ label: 'Loading Button',
+ shape: undefined,
+ variant: 'primary',
+ loading: true
+};
+
