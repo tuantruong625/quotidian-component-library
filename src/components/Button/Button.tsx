@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled, { css } from "styled-components";
 import { BorderRadius, Colors } from "../../utils";
 import Loader from "../Loader";
@@ -9,13 +9,16 @@ export type ButtonProps = {
   disabled?: boolean,
   shape?: "sm" | "md" | "lg" | "full" | undefined,
   variant?: "primary" | "outline" | "text",
-  loading?: boolean,
+  loader?: boolean,
   onClick?: () => void
 }
 
 type StyleProps = {
   shape?: "sm" | "md" | "lg" | "full",
-  variant?: "primary" | "outline" | "text"
+  variant?: "primary" | "outline" | "text",
+  width?: number,
+  height?: number,
+  loader?: boolean
 }
 
 const handleBorderRadius = (size?: string) => {
@@ -78,6 +81,12 @@ const QuotidianButton = styled.button<StyleProps>`
     }
   `}
 
+  ${({ loader, width, height }) => loader && css`
+    width: ${width}px;
+    height: ${height}px;
+    cursor: not-allowed;
+`}
+
   ${({ variant }) => variant === 'text' && css`
     background-color: ${Colors.white};
     color: ${Colors.gray7};
@@ -89,15 +98,30 @@ const QuotidianButton = styled.button<StyleProps>`
   `}
 `
 
-const Button = ({ label, shape, variant = "primary", disabled, loading, ...props }: ButtonProps): JSX.Element => {
+const Button = ({ label, shape, variant = "primary", disabled, loader, onClick, ...props }: ButtonProps): JSX.Element => {
+  const buttonRef = useRef<HTMLButtonElement>(null)
+  const [buttonWidth, setButtonWidth] = useState<number>()
+  const [buttonHeight, setButtonHeight] = useState<number>()
+
+  useEffect(() => {
+    setButtonWidth(buttonRef.current?.clientWidth)
+    setButtonHeight(buttonRef.current?.clientHeight)
+
+  }, [buttonWidth, buttonHeight])
+
   return (
     <QuotidianButton
+      ref={buttonRef}
       shape={shape}
       variant={variant}
-      disabled={disabled}
+      disabled={disabled || loader}
+      onClick={onClick}
+      loader={loader}
+      height={buttonHeight}
+      width={buttonWidth}
       {...props}
     >
-      {loading ? <Loader /> : label}
+      {loader ? <Loader /> : label}
     </QuotidianButton>
   )
 };
