@@ -16,20 +16,26 @@ export const Primary = Template.bind({});
 Primary.args = {
  label: 'Primary button',
  shape: undefined,
- variant: 'primary'
+ variant: 'primary',
+ loader: false,
+ disabled: false
 };
 
 export const Outline = Template.bind({});
 Outline.args = {
  label: 'Outline button',
  shape: undefined,
- variant: 'outline'
+ variant: 'outline',
+ loader: false,
+ disabled: false
 };
 
 export const Text = Template.bind({});
 Text.args = {
  label: 'Text button',
  shape: undefined,
- variant: 'text'
+ variant: 'text',
+ loader: false,
+ disabled: false
 };
 
