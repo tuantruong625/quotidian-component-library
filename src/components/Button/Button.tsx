@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import styled, { css } from "styled-components";
 import { BorderRadius, Colors } from "../../utils";
 import Loader from "../Loader";
@@ -103,7 +104,7 @@ const Button = ({ label, shape, variant = "primary", disabled, loader, onClick, 
   const [buttonWidth, setButtonWidth] = useState<number>()
   const [buttonHeight, setButtonHeight] = useState<number>()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setButtonWidth(buttonRef.current?.clientWidth)
     setButtonHeight(buttonRef.current?.clientHeight)
 
