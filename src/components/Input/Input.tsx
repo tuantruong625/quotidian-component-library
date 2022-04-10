@@ -6,8 +6,8 @@ export type InputProps = {
   type: string,
   placeholder: string,
   disabled?: boolean,
-  shape?: "sm" | "md" | "lg" | "full" | undefined,
-  onChange?: () => void
+  shape?: "sm" | "md" | "lg" | "full",
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 type StyleProps = {

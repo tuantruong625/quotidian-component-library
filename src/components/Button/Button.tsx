@@ -8,7 +8,7 @@ import './Button.css'
 export type ButtonProps = {
   label: string,
   disabled?: boolean,
-  shape?: "sm" | "md" | "lg" | "full" | undefined,
+  shape?: "sm" | "md" | "lg" | "full",
   variant?: "primary" | "outline" | "text",
   loader?: boolean,
   onClick?: () => void
