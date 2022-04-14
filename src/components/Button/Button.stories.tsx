@@ -1,12 +1,12 @@
 import React from 'react';
+import { ChartBarIcon  } from '@heroicons/react/outline'
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
 import Button from './Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
  title: 'QuotidianComponentLibrary/Button',
- component: Button,
+ component: Button
 } as ComponentMeta<typeof Button>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
@@ -38,4 +38,11 @@ Text.args = {
  loader: false,
  disabled: false
 };
+
+export const Icon = () => {
+ return (
+  // <Button variant='outline' icon={<BeakerIcon style={{ color: 'red', height: '1rem' }} />} />
+  <Button icon={<ChartBarIcon />}  />
+ )
+}
 

@@ -1,25 +1,34 @@
-import React from "react";
+import React, { ComponentType, ReactElement, ReactNode } from "react";
 import { useLayoutEffect, useRef, useState } from "react";
 import styled, { css } from "styled-components";
-import { BorderRadius, Colors } from "../../utils";
+import { BorderRadius, Colors, Spacing } from "../../utils";
 import Loader from "../Loader";
 import './Button.css'
 
 export type ButtonProps = {
-  label: string,
+  label?: string,
   disabled?: boolean,
   shape?: "sm" | "md" | "lg" | "full",
   variant?: "primary" | "outline" | "text",
   loader?: boolean,
+  icon?: ReactElement<IconProps>,
   onClick?: () => void
 }
 
+type IconProps = {
+  height: string,
+  width: string,
+  color: string,
+}
+
 type StyleProps = {
+  label?: string
   shape?: "sm" | "md" | "lg" | "full",
   variant?: "primary" | "outline" | "text",
   width?: number,
   height?: number,
-  loader?: boolean
+  loader?: boolean,
+  icon?: ReactElement<IconProps>,
 }
 
 const handleBorderRadius = (size?: string) => {
@@ -86,7 +95,7 @@ const QuotidianButton = styled.button<StyleProps>`
     width: ${width}px;
     height: ${height}px;
     cursor: not-allowed;
-`}
+  `}
 
   ${({ variant }) => variant === 'text' && css`
     background-color: ${Colors.white};
@@ -97,9 +106,35 @@ const QuotidianButton = styled.button<StyleProps>`
       box-shadow: inset 3px 3px 2px rgba(0,0,0,0.15);
     }
   `}
+
+  ${({ icon, label }) => icon && label && css`
+    display: flex;
+    align-items: center;
+
+    > svg {
+      margin-right: ${Spacing.size1};
+      color: ${Colors.gray1};
+      width: 1rem;
+      height: 1rem;
+    }
+  `}
+
+  ${({ icon }) => icon && css`
+      display: flex;
+      border-radius: ${BorderRadius.full};
+      padding: 0.5rem;
+      padding: ${Spacing.size2};
+      height: 2rem;
+      width: 2rem;
+
+      > svg {
+        color: ${Colors.gray1};
+        width: 2rem;
+      }
+  ` }
 `
 
-const Button = ({ label, shape, variant = "primary", disabled, loader, onClick, ...props }: ButtonProps): JSX.Element => {
+const Button = ({ label, shape, variant = "primary", disabled, loader, onClick, icon, ...props }: ButtonProps): JSX.Element => {
   const buttonRef = useRef<HTMLButtonElement>(null)
   const [buttonWidth, setButtonWidth] = useState<number>()
   const [buttonHeight, setButtonHeight] = useState<number>()
@@ -120,8 +155,11 @@ const Button = ({ label, shape, variant = "primary", disabled, loader, onClick, 
       loader={loader}
       height={buttonHeight}
       width={buttonWidth}
+      icon={icon}
+      label={label}
       {...props}
     >
+      {icon}
       {loader ? <Loader /> : label}
     </QuotidianButton>
   )
