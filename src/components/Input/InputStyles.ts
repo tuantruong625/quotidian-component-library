@@ -1,29 +1,15 @@
 import styled from "styled-components"
-import { BorderRadius, Colors } from "../../utils"
+import { Colors } from "../../utils"
+import { handleBorderRadius } from "../utils"
 
 type StyleProps = {
- shape?: "sm" | "md" | "lg" | "full",
-}
-
-const handleBorderRadius = (size?: string) => {
- switch (size) {
-  case "sm":
-   return `${BorderRadius.sm}`
-  case "md":
-   return `${BorderRadius.md}`
-  case "lg":
-   return `${BorderRadius.lg}`
-  case "full":
-   return `${BorderRadius.full}`
-  default:
-   return `${BorderRadius.none}`
- }
+  shape?: "sm" | "md" | "lg" | "full",
 }
 
 export const QuotidianInput = styled.input<StyleProps>`
 padding: 0.5rem;
 border: 1px solid ${Colors.gray3};
-border-radius: ${({ shape }) => handleBorderRadius(shape)};
+border-radius: ${({ shape }) => handleBorderRadius(shape as string)};
 color: ${Colors.gray4};
 
 &:disabled {

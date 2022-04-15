@@ -1,36 +1,22 @@
 import { ReactElement } from "react";
 import styled, { css } from "styled-components";
 import { BorderRadius, Colors, Spacing } from "../../utils";
+import { handleBorderRadius } from "../utils";
 
 type StyleProps = {
- label?: string
- shape?: "sm" | "md" | "lg" | "full",
- variant?: "primary" | "outline" | "text",
- width?: number,
- height?: number,
- loader?: boolean,
- icon?: ReactElement<IconProps>,
+  label?: string
+  shape?: "sm" | "md" | "lg" | "full",
+  variant?: "primary" | "outline" | "text",
+  width?: number,
+  height?: number,
+  loader?: boolean,
+  icon?: ReactElement<IconProps>,
 }
 
 export type IconProps = {
- height: string,
- width: string,
- color: string,
-}
-
-const handleBorderRadius = (size?: string) => {
- switch (size) {
-  case "sm":
-   return `${BorderRadius.sm}`
-  case "md":
-   return `${BorderRadius.md}`
-  case "lg":
-   return `${BorderRadius.lg}`
-  case "full":
-   return `${BorderRadius.full}`
-  default:
-   return `${BorderRadius.none}`
- }
+  height: string,
+  width: string,
+  color: string,
 }
 
 export const QuotidianButton = styled.button<StyleProps>`
@@ -40,7 +26,7 @@ export const QuotidianButton = styled.button<StyleProps>`
   border: 0;
   cursor: pointer;
   transition: 0.25s;
-  border-radius: ${({ shape }) => handleBorderRadius(shape)};
+  border-radius: ${({ shape }) => handleBorderRadius(shape as string)};
   transform: translateY(0);
   user-select: none;
 
@@ -99,17 +85,17 @@ export const QuotidianButton = styled.button<StyleProps>`
     align-items: center;
 
     > svg {
-      margin-right: ${Spacing.size1};
+      margin: 0 ${Spacing.size1};
       color: ${Colors.gray1};
-      width: 1rem;
-      height: 1rem;
+      width: 1em;
+      height: 1em;
     }
   `}
 
-  ${({ icon }) => icon && css`
+  ${({ icon, label, shape }) => icon && !label && css`
       display: flex;
-      border-radius: ${BorderRadius.full};
-      padding: 0.5rem;
+      justify-content: center;
+      border-radius: ${handleBorderRadius(shape as string)};
       padding: ${Spacing.size2};
       height: 2rem;
       width: 2rem;
