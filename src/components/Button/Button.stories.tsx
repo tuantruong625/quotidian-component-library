@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChartBarIcon  } from '@heroicons/react/outline'
+import { CheckIcon } from '@heroicons/react/outline'
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Button from './Button';
 
@@ -41,8 +41,12 @@ Text.args = {
 
 export const Icon = () => {
  return (
-  // <Button variant='outline' icon={<BeakerIcon style={{ color: 'red', height: '1rem' }} />} />
-  <Button icon={<ChartBarIcon />}  />
+  <Button icon={<CheckIcon />} shape='full' />
  )
 }
 
+export const IconWithText = () => {
+ return (
+  <Button icon={<CheckIcon />} label="Button with icon" />
+ )
+}
