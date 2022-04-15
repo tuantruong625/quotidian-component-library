@@ -3,7 +3,7 @@ import { IconProps, QuotidianButton } from "./ButtonStyles";
 import Loader from "../Loader";
 import './Button.css'
 
-type ButtonProps = {
+export type ButtonProps = {
   label?: string,
   disabled?: boolean,
   shape?: "sm" | "md" | "lg" | "full",
