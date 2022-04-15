@@ -1,12 +1,12 @@
 import React from 'react';
+import { CheckIcon } from '@heroicons/react/outline'
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
 import Button from './Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
  title: 'QuotidianComponentLibrary/Button',
- component: Button,
+ component: Button
 } as ComponentMeta<typeof Button>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
@@ -39,3 +39,14 @@ Text.args = {
  disabled: false
 };
 
+export const Icon = () => {
+ return (
+  <Button icon={<CheckIcon />} shape='full' />
+ )
+}
+
+export const IconWithText = () => {
+ return (
+  <Button icon={<CheckIcon />} label="Button with icon" />
+ )
+}
