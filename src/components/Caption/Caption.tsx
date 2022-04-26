@@ -1,8 +1,38 @@
 import React from 'react'
+import styled, { css } from 'styled-components'
+import { Spacing, Typography } from '../../utils'
 
-const Caption = (): JSX.Element => {
+type CaptionProps = {
+ children: React.ReactNode,
+ isUppercase?: boolean,
+ isCapitalized?: boolean,
+}
+
+type StyleProps = {
+ isCapitalized: boolean,
+ isUppercase: boolean
+}
+
+const QuotidianCaption = styled.p<StyleProps>`
+ font-size: ${Typography.caption};
+
+ ${({ isCapitalized, isUppercase }) => isCapitalized && !isUppercase && css`
+  &::first-letter {
+   text-transform: capitalize;
+  }
+ `}
+
+ ${({ isUppercase, isCapitalized }) => isUppercase && !isCapitalized && css`
+   text-transform: uppercase;
+   letter-spacing: ${Spacing.size1};
+ `}
+`
+
+const Caption = ({ isUppercase = false, isCapitalized = false, children, ...props }: CaptionProps): JSX.Element => {
  return (
-  <p>Caption</p>
+  <QuotidianCaption isCapitalized={isCapitalized} isUppercase={isUppercase} {...props}>
+   {children}
+  </QuotidianCaption>
  )
 }
 
