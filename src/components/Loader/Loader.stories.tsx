@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import Loader from './Loader'
 
 export default {
- title: 'QuotidianComponentLibrary/Loader',
+ title: 'QuotidianComponentLibrary/⚛️ Atoms/Loader',
  component: Loader,
 } as ComponentMeta<typeof Loader>
 
