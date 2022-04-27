@@ -4,7 +4,7 @@ import { Colors, Spacing, Typography } from '../../utils'
 
 export interface HeadingProps {
  type: 'h1' | 'h2' | 'h3' | 'h4' | 'h5',
- children: React.ReactNode
+ children?: React.ReactNode
 }
 interface StyleProps {
  type: string
@@ -38,7 +38,7 @@ const QuotidianHeader = styled.h1<StyleProps>`
 
 const Heading = ({ type = 'h1', children, ...props }: HeadingProps): JSX.Element => {
  return (
-  <QuotidianHeader as={type} type={type}>{children}</QuotidianHeader>
+  <QuotidianHeader as={type} type={type} {...props}>{children}</QuotidianHeader>
  )
 }
 
