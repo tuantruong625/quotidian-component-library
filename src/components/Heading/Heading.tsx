@@ -1,5 +1,5 @@
-import React, { createElement } from 'react'
-import styled, { createGlobalStyle, css } from 'styled-components'
+import React from 'react'
+import styled, { css } from 'styled-components'
 import { Colors, Spacing, Typography } from '../../utils'
 
 export interface HeadingProps {
