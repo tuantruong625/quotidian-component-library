@@ -12,7 +12,7 @@ interface StyleProps {
 
 const QuotidianHeader = styled.h1<StyleProps>`
  margin: ${Spacing.size5} 0;
- line-height: ${Spacing.size7};
+ line-height: ${Spacing.size5};
  color: ${Colors.gray6};
 
  ${({ type }) => type === 'h1' && css`

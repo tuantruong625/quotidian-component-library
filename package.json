@@ -9,7 +9,8 @@
     "test-coverage": "jest --coverage",
     "view-coverage": "open coverage/lcov-report/index.html",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token=51e83c4b45de"
   },
   "author": "Tuan N. Truong",
   "license": "ISC",
@@ -36,6 +37,7 @@
     "@types/styled-components": "^5.1.24",
     "babel-jest": "^27.5.1",
     "babel-loader": "^8.2.3",
+    "chromatic": "^6.5.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "jest-styled-components": "^7.0.8",
