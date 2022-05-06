@@ -1,4 +1,4 @@
-import { BorderRadius } from "../utils"
+import { BorderRadius, Typography } from "../utils"
 
 export const handleBorderRadius = (size: string) => {
   switch (size) {
@@ -12,5 +12,22 @@ export const handleBorderRadius = (size: string) => {
       return `${BorderRadius.full}`
     default:
       return `${BorderRadius.none}`
+  }
+}
+
+export const handleHeadingSize = (size: string) => {
+  switch (size) {
+    case "xs":
+      return `${Typography.xsmall}`
+    case "sm":
+      return `${Typography.small}`
+    case "md":
+      return `${Typography.body}`
+    case "lg":
+      return `${Typography.heading3}`
+    case "xl":
+      return `${Typography.heading2}`
+    default:
+      return `${Typography.heading1}`
   }
 }
