@@ -1,6 +1,6 @@
 {
   "name": "@tuantruong625/quotidian-component-library",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "Minimal react component library",
   "scripts": {
     "rollup": "rollup -c",
