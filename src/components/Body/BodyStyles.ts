@@ -9,8 +9,8 @@ type StyleProps = {
 export const QuotidianBody = styled.p<StyleProps>`
  font-size: ${Typography.body};
  color: ${Colors.gray6};
- margin: ${Spacing.size5} 0;
- line-height: ${Spacing.size7};
+ margin: ${Spacing.size2} 0;
+ line-height: ${Spacing.size5};
  
  ${({ isCapitalized, isUppercase }) => isCapitalized && !isUppercase && css`
    &::first-letter {
