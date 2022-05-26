@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import spacing from '../../utils/spacing'
 import Radio from '../Radio/Radio'
 
 type StyleProps = {
@@ -11,6 +12,10 @@ const RadioGroupWrapper = styled.div<StyleProps>`
  flex-direction: ${({ isHorizontal }) => isHorizontal ? 'row' : 'column'};
  justify-content: center;
  align-items: center;
+
+ > label {
+  margin: ${spacing.size1};
+ }
 `
 
 export interface RadioGroupProps {
