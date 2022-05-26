@@ -4,7 +4,7 @@ import Body from "./Body"
 import { Spacing } from "../../utils"
 
 const BODY_TEXT = "this a body component"
-const renderComponent = ({ ...props }) => {
+const renderComponent = (props = {}) => {
  return (
   render(<Body {...props} >{BODY_TEXT}</Body>)
  )

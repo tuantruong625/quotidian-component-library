@@ -1,11 +1,11 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import Heading, { HeadingProps } from "./Heading";
+import Heading from "./Heading";
 import { Typography } from "../../utils";
 
 const HEADING_COPY = "This is a heading";
-const renderComponent = ({ ...props }: HeadingProps) => {
-  return render(<Heading {...props}>{HEADING_COPY}</Heading>);
+const renderComponent = (props = {}) => {
+  return render(<Heading type="h1" {...props}>{HEADING_COPY}</Heading>);
 };
 
 describe("Heading", () => {

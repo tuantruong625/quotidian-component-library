@@ -4,7 +4,7 @@ import Caption from "./Caption"
 import { Spacing } from "../../utils"
 
 const BODY_TEXT = "this a body component"
-const renderComponent = ({ ...props }) => {
+const renderComponent = (props = {}) => {
  return (
   render(<Caption {...props} >{BODY_TEXT}</Caption>)
  )
