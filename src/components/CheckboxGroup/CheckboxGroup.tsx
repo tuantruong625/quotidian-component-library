@@ -1,13 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
-import spacing from '../../utils/spacing'
 import Checkbox from "../Checkbox/Checkbox"
 
-type StyleProps = {
- alignment?: 'horizontal' | 'vertical',
-}
-
-export interface CheckboxGroupProps {
+export interface CheckboxGroupProps extends React.HTMLProps<HTMLDivElement> {
  items: {
   label: string,
   value: string,
@@ -16,15 +10,6 @@ export interface CheckboxGroupProps {
  alignment?: 'horizontal' | 'vertical',
  checkmarkIcon?: boolean
 }
-
-const CheckboxGroupWrapper = styled.div<StyleProps>`
- display: flex;
- flex-direction: ${({ alignment }) => alignment === 'horizontal' ? 'row' : 'column'};
-
- > label {
-  margin: ${spacing.size1};
- }
-`
 
 const CheckboxGroup = ({ items, alignment = 'horizontal', checkmarkIcon }: CheckboxGroupProps): JSX.Element => {
  return (

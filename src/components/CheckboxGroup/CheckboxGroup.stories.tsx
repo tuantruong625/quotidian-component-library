@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import CheckboxGroup from './CheckboxGroup';
 
 export default {
- title: 'QuotidianComponentLibrary/⚛️ Atoms/Checkbox Group',
+ title: 'QuotidianComponentLibrary/👥 Molecules/Checkbox Group',
  component: CheckboxGroup
 } as ComponentMeta<typeof CheckboxGroup>
 
