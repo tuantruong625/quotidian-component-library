@@ -1,7 +1,7 @@
 import React from 'react'
 import { QuotidianBody } from './BodyStyles'
 
-type BodyProps = {
+export interface BodyProps extends React.HTMLAttributes<HTMLParagraphElement> {
   children: React.ReactNode,
   isCapitalized?: boolean,
   isUppercase?: boolean
