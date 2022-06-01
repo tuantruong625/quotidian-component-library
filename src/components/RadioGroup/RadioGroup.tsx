@@ -1,22 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
-import spacing from '../../utils/spacing'
 import Radio from '../Radio/Radio'
-
-type StyleProps = {
- alignment?: 'horizontal' | 'vertical'
-}
-
-const RadioGroupWrapper = styled.div<StyleProps>`
- display: flex;
- flex-direction: ${({ alignment }) => alignment === 'horizontal' ? 'row' : 'column'};
-
- > label {
-  margin: ${spacing.size1};
- }
-`
-
-export interface RadioGroupProps {
+import { RadioGroupWrapper } from './RadioGroupStyles'
+export interface RadioGroupProps extends React.HTMLProps<HTMLDivElement> {
  items: {
   name: string,
   value: string,

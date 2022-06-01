@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import RadioGroup from './RadioGroup';
 
 export default {
- title: 'QuotidianComponentLibrary/⚛️ Atoms/Radio Group',
+ title: 'QuotidianComponentLibrary/👥 Molecules/Radio Group',
  component: RadioGroup
 } as ComponentMeta<typeof RadioGroup>
 
