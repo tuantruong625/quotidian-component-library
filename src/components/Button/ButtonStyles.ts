@@ -21,7 +21,7 @@ export type IconProps = {
 
 export const QuotidianButton = styled.button<StyleProps>`
   background-color: ${Colors.gray7};
-  padding: 0.625rem 0.5rem;
+  padding: ${Spacing.size3} ${Spacing.size2};
   color: ${Colors.gray1};
   border: 0;
   cursor: pointer;
