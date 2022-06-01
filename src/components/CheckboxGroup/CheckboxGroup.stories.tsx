@@ -1,13 +1,13 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import RadioGroup from './RadioGroup';
+import CheckboxGroup from './CheckboxGroup';
 
 export default {
- title: 'QuotidianComponentLibrary/⚛️ Atoms/Radio Group',
- component: RadioGroup
-} as ComponentMeta<typeof RadioGroup>
+ title: 'QuotidianComponentLibrary/⚛️ Atoms/Checkbox Group',
+ component: CheckboxGroup
+} as ComponentMeta<typeof CheckboxGroup>
 
-const Template: ComponentStory<typeof RadioGroup> = (args) => <RadioGroup {...args} />;
+const Template: ComponentStory<typeof CheckboxGroup> = (args) => <CheckboxGroup {...args} />;
 
 export const VerticalGroup = Template.bind({});
 VerticalGroup.args = {
@@ -50,5 +50,6 @@ HorizontalGroup.args = {
    label: 'Bar'
   },
  ],
- alignment: 'horizontal'
+ alignment: 'horizontal',
+ checkmarkIcon: true
 }
