@@ -2,27 +2,26 @@ import React from 'react'
 import { render, screen } from "@testing-library/react"
 import CheckboxGroup from "./CheckboxGroup"
 
+const items = [
+ {
+  name: 'Foo',
+  value: 'Foo',
+  label: 'Foo'
+ },
+ {
+  name: 'Foo',
+  value: 'Baz',
+  label: 'Baz'
+ },
+ {
+  name: 'Foo',
+  value: 'Bar',
+  label: 'Bar'
+ },
+]
 describe('CheckboxGroup', () => {
- const items = [
-  {
-   name: 'Foo',
-   value: 'Foo',
-   label: 'Foo'
-  },
-  {
-   name: 'Foo',
-   value: 'Baz',
-   label: 'Baz'
-  },
-  {
-   name: 'Foo',
-   value: 'Bar',
-   label: 'Bar'
-  },
- ]
-
  const renderComponent = (props = {}) => {
-  return render(<CheckboxGroup items={items}{...props} />)
+  return render(<CheckboxGroup items={items} {...props} />)
  }
 
  describe('group alignment', () => {

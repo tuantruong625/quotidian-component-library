@@ -30,14 +30,14 @@ const renderComponent = (props = {}) => {
 describe('Radio Group', () => {
  describe('radio group is vertically laid out by default', () => {
   it('radio group wrapper has style rule flex-direction column', () => {
-   renderComponent()
+   renderComponent({ alignment: 'vertical' })
    expect(screen.getByTestId('radio-group')).toHaveStyleRule('flex-direction', 'column')
   })
  })
 
  describe('horizontal radio group', () => {
   it('radio buttons are layed in horizontal layout', () => {
-   renderComponent({ isHorizontal: true })
+   renderComponent({ alignment: 'horizontal' })
    expect(screen.getByTestId('radio-group')).toHaveStyleRule('flex-direction', 'row')
   })
  })

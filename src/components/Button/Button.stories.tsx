@@ -18,7 +18,7 @@ Primary.args = {
  shape: undefined,
  variant: 'primary',
  loader: false,
- disabled: false
+ disabled: false,
 };
 
 export const Outline = Template.bind({});

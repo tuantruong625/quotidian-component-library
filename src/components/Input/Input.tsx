@@ -1,7 +1,7 @@
 import React from "react"
 import { QuotidianInput } from "./InputStyles"
 
-export type InputProps = {
+export interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
   type: string,
   placeholder: string,
   disabled?: boolean,
