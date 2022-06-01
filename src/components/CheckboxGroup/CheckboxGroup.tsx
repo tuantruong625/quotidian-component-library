@@ -2,7 +2,7 @@ import React from 'react'
 import Checkbox from "../Checkbox/Checkbox"
 import { CheckboxGroupWrapper } from './CheckboxGroupStyles'
 
-export interface CheckboxGroupProps extends React.HTMLProps<HTMLDivElement> {
+export interface CheckboxGroupProps extends React.HTMLAttributes<HTMLDivElement> {
  items: {
   label: string,
   value: string,
@@ -17,7 +17,7 @@ const CheckboxGroup = ({ items, alignment = 'horizontal', checkmarkIcon }: Check
   <CheckboxGroupWrapper alignment={alignment} data-testid="checkbox-group">
    {
     items.map(({ label, name, value }) => (
-     <Checkbox key={value} label={label} name={name} value={value} checkmarkIcon={checkmarkIcon} />
+     <Checkbox key={value} {...{ label, name, value, checkmarkIcon }} />
     ))
    }
 
