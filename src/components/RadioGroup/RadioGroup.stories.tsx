@@ -27,7 +27,8 @@ VerticalGroup.args = {
    value: 'Bar',
    label: 'Bar'
   },
- ]
+ ],
+ alignment: 'vertical'
 }
 
 export const HorizontalGroup = Template.bind({});
@@ -49,5 +50,5 @@ HorizontalGroup.args = {
    label: 'Bar'
   },
  ],
- isHorizontal: true
+ alignment: 'horizontal'
 }

@@ -4,14 +4,12 @@ import spacing from '../../utils/spacing'
 import Radio from '../Radio/Radio'
 
 type StyleProps = {
- isHorizontal?: boolean
+ alignment?: 'horizontal' | 'vertical'
 }
 
 const RadioGroupWrapper = styled.div<StyleProps>`
  display: flex;
- flex-direction: ${({ isHorizontal }) => isHorizontal ? 'row' : 'column'};
- justify-content: center;
- align-items: center;
+ flex-direction: ${({ alignment }) => alignment === 'horizontal' ? 'row' : 'column'};
 
  > label {
   margin: ${spacing.size1};
@@ -24,12 +22,12 @@ export interface RadioGroupProps {
   value: string,
   label: string,
  }[],
- isHorizontal?: boolean
+ alignment?: 'horizontal' | 'vertical'
 }
 
-const RadioGroup = ({ items, isHorizontal }: RadioGroupProps): JSX.Element => {
+const RadioGroup = ({ items, alignment }: RadioGroupProps): JSX.Element => {
  return (
-  <RadioGroupWrapper data-testid="radio-group" isHorizontal={isHorizontal}>
+  <RadioGroupWrapper data-testid="radio-group" alignment={alignment}>
    {
     items.map(({ label, name, value }) => (
      <Radio key={value} label={label} name={name} value={value} />
