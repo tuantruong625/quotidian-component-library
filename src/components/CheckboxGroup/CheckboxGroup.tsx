@@ -1,5 +1,6 @@
 import React from 'react'
 import Checkbox from "../Checkbox/Checkbox"
+import { CheckboxGroupWrapper } from './CheckboxGroupStyles'
 
 export interface CheckboxGroupProps extends React.HTMLProps<HTMLDivElement> {
  items: {
