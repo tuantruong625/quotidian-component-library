@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input renders an icon 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.5rem;
+  border: 1px solid #4C566A;
+  border-radius: 0px;
+  color: #4C566A;
+}
+
+.c0:disabled {
+  cursor: not-allowed;
+}
+
+.c0::-webkit-input-placeholder {
+  color: #D8DEE9;
+}
+
+.c0::-moz-placeholder {
+  color: #D8DEE9;
+}
+
+.c0:-ms-input-placeholder {
+  color: #D8DEE9;
+}
+
+.c0::placeholder {
+  color: #D8DEE9;
+}
+
+.c0:focus {
+  outline: none;
+  border-color: #88C0D0;
+}
+
+<input
+  class="c0"
+  placeholder="input with icon"
+  type="text"
+/>
+`;
