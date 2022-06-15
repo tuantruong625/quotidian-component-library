@@ -36,7 +36,7 @@ const Button = ({ label, shape, variant = 'primary', disabled, loader, icon, ...
       label={label}
       {...props}
     >
-      {icon}
+      {icon && icon}
       {loader ? <Loader /> : label}
     </QuotidianButton>
   )
