@@ -1,24 +1,24 @@
-import React from "react"
-import { QuotidianInput } from "./InputStyles"
+import React, { ReactElement } from "react"
+import { IconProps, QuotidianInput, QuotidianLabel } from "./InputStyles"
 
 export interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
   type: string,
+  label: string,
   placeholder: string,
   disabled?: boolean,
   shape?: "sm" | "md" | "lg" | "full",
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
+  icon?: ReactElement<IconProps>
 }
 
-const Input = ({ type = 'text', placeholder, disabled, shape, onChange, ...props }: InputProps): JSX.Element => {
+const Input = ({ type = 'text', placeholder, disabled, shape, label, icon, ...props }: InputProps): JSX.Element => {
   return (
-    <QuotidianInput
-      type={type}
-      placeholder={placeholder}
-      disabled={disabled}
-      shape={shape}
-      onChange={onChange}
-      {...props}
-    />
+    <QuotidianLabel icon={icon}>
+      <span>{label}</span>
+      <QuotidianInput
+        {...{ type, disabled, shape, placeholder, ...props }}
+      />
+      {icon && icon}
+    </QuotidianLabel>
   )
 }
 
