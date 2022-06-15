@@ -17,7 +17,6 @@ describe("Input", () => {
  it("renders an icon", () => {
   renderComponent({ icon: <UserIcon /> });
 
-  // expect(screen.getByLabelText("Input with icon")).toMatchSnapshot()
   expect(screen.getByLabelText("Input with icon")).toMatchSnapshot()
  });
 });
