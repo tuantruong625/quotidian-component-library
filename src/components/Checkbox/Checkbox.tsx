@@ -9,7 +9,7 @@ export interface CheckboxProps extends React.HTMLAttributes<HTMLInputElement> {
 const Checkbox = ({ label, checkmarkIcon = false, ...props }: CheckboxProps): JSX.Element => {
  return (
   <QuotidianLabel htmlFor="">
-   <QuotidianCheckbox checkmarkIcon={checkmarkIcon} {...props} />
+   <QuotidianCheckbox type="checkbox" checkmarkIcon={checkmarkIcon} {...props} />
    <span>{label}</span>
   </QuotidianLabel>
  )
