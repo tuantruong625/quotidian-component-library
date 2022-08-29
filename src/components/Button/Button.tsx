@@ -10,9 +10,10 @@ export interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "outline" | "text",
   loader?: boolean,
   icon?: ReactElement<IconProps>,
+  size?: "xs" | "sm" | "md" | "lg" | "xl"
 }
 
-const Button = ({ label, shape, variant = 'primary', disabled, loader, icon, ...props }: ButtonProps): JSX.Element => {
+const Button = ({ label, shape, variant = 'primary', disabled, loader, icon, size, ...props }: ButtonProps): JSX.Element => {
   const buttonRef = useRef<HTMLButtonElement>(null)
   const [buttonWidth, setButtonWidth] = useState<number>()
   const [buttonHeight, setButtonHeight] = useState<number>()
@@ -34,6 +35,7 @@ const Button = ({ label, shape, variant = 'primary', disabled, loader, icon, ...
       width={buttonWidth}
       icon={icon}
       label={label}
+      size={size}
       {...props}
     >
       {icon && icon}

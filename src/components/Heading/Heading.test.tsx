@@ -5,7 +5,11 @@ import { Typography } from "../../utils";
 
 const HEADING_COPY = "This is a heading";
 const renderComponent = (props = {}) => {
-  return render(<Heading type="h1" {...props}>{HEADING_COPY}</Heading>);
+  return render(
+    <Heading type="h1" {...props}>
+      {HEADING_COPY}
+    </Heading>
+  );
 };
 
 describe("Heading", () => {
@@ -18,7 +22,7 @@ describe("Heading", () => {
           margin: 0.5rem 0;
           line-height: 1.5rem;
           color: #3B4252;
-          font-size: 4.25em;
+          font-size: 1rem;
           font-size: 4.25em;
         }
 
@@ -41,7 +45,7 @@ describe("Heading", () => {
           margin: 0.5rem 0;
           line-height: 1.5rem;
           color: #3B4252;
-          font-size: 4.25em;
+          font-size: 1rem;
           font-size: 2.625em;
           font-size: 2.625em;
         }
@@ -65,7 +69,7 @@ describe("Heading", () => {
           margin: 0.5rem 0;
           line-height: 1.5rem;
           color: #3B4252;
-          font-size: 4.25em;
+          font-size: 1rem;
           font-size: 1.625em;
         }
 
@@ -88,7 +92,7 @@ describe("Heading", () => {
           margin: 0.5rem 0;
           line-height: 1.5rem;
           color: #3B4252;
-          font-size: 4.25em;
+          font-size: 1rem;
           font-size: 1em;
         }
 
