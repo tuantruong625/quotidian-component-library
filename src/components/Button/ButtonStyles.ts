@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import styled, { css } from "styled-components";
 import { BorderRadius, Colors, Spacing } from "../../utils";
-import { handleBorderRadius } from "../utils";
+import { handleBorderRadius, handleButtonSize } from "../utils";
 
 type StyleProps = {
   label?: string
@@ -11,6 +11,7 @@ type StyleProps = {
   height?: number,
   loader?: boolean,
   icon?: ReactElement<IconProps>,
+  size?: "xs" | "sm" | "md" | "lg" | "xl"
 }
 
 export type IconProps = {
@@ -21,7 +22,20 @@ export type IconProps = {
 
 export const QuotidianButton = styled.button<StyleProps>`
   background-color: ${Colors.gray7};
-  padding: ${Spacing.size3} ${Spacing.size2};
+  padding: ${({ size }) => {
+    if (size === "xs" || size === "sm" || !size) {
+      return `${Spacing.size3} ${Spacing.size2}`
+    }
+    if (size === "md") {
+      return `${Spacing.size3} ${Spacing.size3}`
+    }
+    if (size === "lg") {
+      return `${Spacing.size3} ${Spacing.size4}`
+    }
+    if (size === "xl") {
+      return `${Spacing.size3} ${Spacing.size5}`
+    }
+  }};
   color: ${Colors.gray1};
   border: 0;
   cursor: pointer;
@@ -29,6 +43,7 @@ export const QuotidianButton = styled.button<StyleProps>`
   border-radius: ${({ shape }) => handleBorderRadius(shape as string)};
   transform: translateY(0);
   user-select: none;
+  font-size: ${({ size }) => handleButtonSize(size as string)};
 
   &:hover {
     box-shadow: 0 1px 2px rgba(0,0,0,0.07), 

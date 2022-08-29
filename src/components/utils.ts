@@ -28,6 +28,23 @@ export const handleHeadingSize = (size: string) => {
     case "xl":
       return `${Typography.heading2}`
     default:
-      return `${Typography.heading1}`
+      return `${Typography.body}`
+  }
+}
+
+export const handleButtonSize = (size: string) => {
+  switch (size) {
+    case "xs":
+      return `${Typography.xsmall}`
+    case "sm":
+      return `${Typography.small}`
+    case "md":
+      return `${Typography.body}`
+    case "lg":
+      return `${Typography.heading3}`
+    case "xl":
+      return `${Typography.heading2}`
+    default:
+      return `${Typography.body}`
   }
 }
