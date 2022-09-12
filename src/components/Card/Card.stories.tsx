@@ -21,6 +21,6 @@ CardWithMedia.args = {
  title: 'Component with media',
  body: 'This is a card component with media',
  caption: 'This is a caption with media',
- media: <img src='https://via.placeholder.com/300x200' alt='placeholder' />
+ media: <img src='https://images.pexels.com/photos/9318388/pexels-photo-9318388.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='placeholder' />
 }
 
