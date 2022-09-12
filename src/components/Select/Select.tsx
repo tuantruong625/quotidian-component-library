@@ -14,7 +14,7 @@ export interface SelectProps extends React.HTMLAttributes<HTMLSelectElement> {
 }
 
 const SelectLabel = styled.label`
- margin-left: ${Spacing.size3};
+ margin-left: ${Spacing.size2};
  text-transform: capitalize;
  color: ${Colors.gray5};
 `
