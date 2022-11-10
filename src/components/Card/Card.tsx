@@ -20,11 +20,11 @@ export interface CardProps {
 
 const QuotidianCard = styled.div<StyledCardProps>`
   padding: ${Spacing.size2};
-  border: 1px solid ${Colors.gray1};
+  border: 1px solid ${Colors.gray100};
   border-radius: ${({ shape }) => handleBorderRadius(shape as string)};
   width: 12rem;
   ${({ elevated }) => elevated && `
-    box-shadow: 2px 4px 8px 0px ${Colors.gray1};
+    box-shadow: 2px 4px 8px 0px ${Colors.gray100};
   `}
 
   ${({ media }) => media && `
@@ -40,7 +40,7 @@ const QuotidianCard = styled.div<StyledCardProps>`
   }
 
   .card-title {
-    color: ${Colors.gray6};
+    color: ${Colors.gray600};
     font-weight: 600;
     white-space: nowrap;
     overflow: hidden;
@@ -49,20 +49,20 @@ const QuotidianCard = styled.div<StyledCardProps>`
   };
 
   .card-body {
-    color: ${Colors.gray5};
+    color: ${Colors.gray500};
     font-size: ${Typography.body};
     margin: 0;
   }
 
   .card-caption {
-    color: ${Colors.gray4};
+    color: ${Colors.gray400};
     font-size: ${Typography.caption};
     margin: 0;
   }
 
   hr {
     border-left: none;
-    border-top: ${Colors.gray1};
+    border-top: ${Colors.gray100};
   };
 `
 

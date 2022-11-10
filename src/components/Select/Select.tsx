@@ -16,14 +16,14 @@ export interface SelectProps extends React.HTMLAttributes<HTMLSelectElement> {
 const SelectLabel = styled.label`
  margin-left: ${Spacing.size2};
  text-transform: capitalize;
- color: ${Colors.gray5};
+ color: ${Colors.gray500};
 `
 
 const SelectWrapper = styled.div`
  width: 100%;
  min-width: 15ch;
  max-width: 30ch;
- border: 1px solid ${Colors.gray4};
+ border: 1px solid ${Colors.gray400};
  border-radius: ${BorderRadius.md};
  padding: ${Spacing.size2} ${Spacing.size3};
  cursor: pointer;

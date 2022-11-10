@@ -21,7 +21,7 @@ export type IconProps = {
 }
 
 export const QuotidianButton = styled.button<StyleProps>`
-  background-color: ${Colors.gray7};
+  background-color: ${Colors.gray700};
   padding: ${({ size }) => {
     if (size === "xs" || size === "sm" || !size) {
       return `${Spacing.size3} ${Spacing.size2}`
@@ -36,7 +36,7 @@ export const QuotidianButton = styled.button<StyleProps>`
       return `${Spacing.size3} ${Spacing.size5}`
     }
   }};
-  color: ${Colors.gray1};
+  color: ${Colors.gray100};
   border: 0;
   cursor: pointer;
   transition: 0.25s;
@@ -56,8 +56,8 @@ export const QuotidianButton = styled.button<StyleProps>`
   }
   
   &:disabled {
-    color: ${Colors.gray3};
-    background-color: ${Colors.gray4};
+    color: ${Colors.gray300};
+    background-color: ${Colors.gray400};
     box-shadow: none;
     transform: translateY(0);
     cursor: not-allowed;
@@ -70,8 +70,8 @@ export const QuotidianButton = styled.button<StyleProps>`
 
   ${({ variant }) => variant === 'outline' && css`
     background-color: ${Colors.white};
-    color: ${Colors.gray7};
-    border: 1px solid ${Colors.gray7};
+    color: ${Colors.gray700};
+    border: 1px solid ${Colors.gray700};
 
     &:active {
       transform: translateY(0);
@@ -87,7 +87,7 @@ export const QuotidianButton = styled.button<StyleProps>`
 
   ${({ variant }) => variant === 'text' && css`
     background-color: ${Colors.white};
-    color: ${Colors.gray7};
+    color: ${Colors.gray700};
 
     &:active {
       transform: translateY(0);
@@ -101,7 +101,7 @@ export const QuotidianButton = styled.button<StyleProps>`
 
     > svg {
       margin: 0 ${Spacing.size1};
-      color: ${Colors.gray1};
+      color: ${Colors.gray100};
       width: 1em;
       height: 1em;
     }
@@ -116,7 +116,7 @@ export const QuotidianButton = styled.button<StyleProps>`
       width: 2rem;
 
       > svg {
-        color: ${Colors.gray1};
+        color: ${Colors.gray100};
         width: 2rem;
       }
   ` }

@@ -2,13 +2,13 @@ import styled, { css } from 'styled-components'
 import { Colors, Spacing, Typography } from '../../utils'
 
 type StyleProps = {
- isCapitalized: boolean,
- isUppercase: boolean
+  isCapitalized: boolean,
+  isUppercase: boolean
 }
 
 export const QuotidianCaption = styled.p<StyleProps>`
 font-size: ${Typography.caption};
-color: ${Colors.gray4};
+color: ${Colors.gray400};
 margin: ${Spacing.size1} 0;
 
 ${({ isCapitalized, isUppercase }) => isCapitalized && !isUppercase && css`

@@ -22,7 +22,7 @@ export const QuotidianLabel = styled.label<StyleProps>`
   justify-content: center;
   flex-direction: column;
   font-size: ${Spacing.size3};
-  color: ${Colors.gray4};
+  color: ${Colors.gray400};
   position: relative;
   
   > span:first-letter {
@@ -48,16 +48,16 @@ export const QuotidianInput = styled.input<StyleProps>`
 display: flex;
 align-items: center;
 padding: ${Spacing.size2};
-border: 1px solid ${Colors.gray4};
+border: 1px solid ${Colors.gray400};
 border-radius: ${({ shape }) => handleBorderRadius(shape as string)};
-color: ${Colors.gray4};
+color: ${Colors.gray400};
 
 &:disabled {
   cursor: not-allowed;
 }
 
 &::placeholder {
-  color: ${Colors.gray3};
+  color: ${Colors.gray300};
 }
 
 &:focus {

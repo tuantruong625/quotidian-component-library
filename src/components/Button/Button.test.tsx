@@ -73,23 +73,23 @@ describe('Button', () => {
    [
     'primary',
     [
-     { styleRule: 'background-color', styleProperty: Colors.gray7 },
-     { styleRule: 'color', styleProperty: Colors.gray1 },
+     { styleRule: 'background-color', styleProperty: Colors.gray700 },
+     { styleRule: 'color', styleProperty: Colors.gray100 },
     ]
    ],
    [
     'outline',
     [
      { styleRule: 'background-color', styleProperty: Colors.white },
-     { styleRule: 'color', styleProperty: Colors.gray7 },
-     { styleRule: 'border', styleProperty: `1px solid ${Colors.gray7}` },
+     { styleRule: 'color', styleProperty: Colors.gray700 },
+     { styleRule: 'border', styleProperty: `1px solid ${Colors.gray700}` },
     ]
    ],
    [
     'text',
     [
      { styleRule: 'background-color', styleProperty: Colors.white },
-     { styleRule: 'color', styleProperty: Colors.gray7 },
+     { styleRule: 'color', styleProperty: Colors.gray700 },
     ]
    ],
   ])('%p variant', (variant: any, expected: any) => {

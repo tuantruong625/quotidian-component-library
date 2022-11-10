@@ -8,7 +8,7 @@ type StyleProps = {
 
 export const QuotidianBody = styled.p<StyleProps>`
  font-size: ${Typography.body};
- color: ${Colors.gray6};
+ color: ${Colors.gray600};
  margin: ${Spacing.size2} 0;
  line-height: ${Spacing.size5};
  

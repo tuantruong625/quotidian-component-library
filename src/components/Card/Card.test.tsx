@@ -18,7 +18,7 @@ describe('Card', () => {
  describe('has elevated passed to component', () => {
   it('renders the elevated class', () => {
    renderComponent({ elevated: true })
-   expect(screen.getByRole('article')).toHaveStyleRule('box-shadow', `2px 4px 8px 0px ${Colors.gray1}`)
+   expect(screen.getByRole('article')).toHaveStyleRule('box-shadow', `2px 4px 8px 0px ${Colors.gray100}`)
   })
  })
 

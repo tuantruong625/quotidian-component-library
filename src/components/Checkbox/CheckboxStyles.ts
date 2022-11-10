@@ -8,17 +8,17 @@ type StyleProps = {
 export const QuotidianLabel = styled.label`
  display: flex;
  align-items: center;
- color: ${Colors.gray4};
+ color: ${Colors.gray400};
 `
 export const QuotidianCheckbox = styled.input<StyleProps>`
  margin-right: ${Spacing.size1};
  -webkit-appearance: none;
  appearance: none;
- color: ${Colors.gray6};
+ color: ${Colors.gray600};
  border-radius: ${BorderRadius.sm};
  height: ${Spacing.size4};
  width: ${Spacing.size4};
- border: 1px solid ${Colors.gray6};
+ border: 1px solid ${Colors.gray600};
  display: flex;
  justify-content: center;
  align-items: center;

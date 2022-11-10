@@ -10,7 +10,7 @@ export const BouncerLoader = styled.div`
  > div  {
   width: 8px;
   height: 8px;
-  background-color: ${Colors.gray3};
+  background-color: ${Colors.gray300};
   border-radius: 50%;
   margin: 0 2px;
   animation: bouncer 0.5s cubic-bezier(.19, .57, .3, .98) infinite alternate;
