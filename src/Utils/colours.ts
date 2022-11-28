@@ -1,9 +1,25 @@
+export const quotidian700 = '#2E3440';
+export const quotidian600 = '#3B4252';
+export const quotidian500 = '#434C5E';
+export const quotidian400 = '#475569';
+export const quotidian300 = '#D8DEE9';
+export const quotidian200 = '#E5E9F0';
+export const quotidian100 = '#ECEFF4';
+export const quotidian50 = '#F8F9FA';
+export const quotidianBlue = '#5E81AC';
+export const quotidianOffBlue = '#81A1C1';
+export const quotidianTeal = '#88C0D0';
+export const quotidianOffwhite = '#FAF9F6';
+export const quotidianRed = '#BF616A';
+export const quotidianYellow = '#EBCB8B';
+export const quotidianGreen = '#A3BE8C';
+
 export const gray50 = '#F8F9FA';
 export const gray100 = '#ECEFF4';
 export const gray200 = '#E5E9F0';
 export const gray300 = '#D8DEE9';
 export const gray400 = '#4C566A';
-export const gray500 = '#434C5E';
+export const gray500 = '#ADB5BD';
 export const gray600 = '#3B4252';
 export const gray700 = '#2E3440';
 export const gray800 = '#343a40';
@@ -162,6 +178,21 @@ export const white = '#FFF';
 export const black = '#000';
 
 export default {
+ quotidian700,
+ quotidian600,
+ quotidian500,
+ quotidian400,
+ quotidian300,
+ quotidian200,
+ quotidian100,
+ quotidian50,
+ quotidianBlue,
+ quotidianOffBlue,
+ quotidianTeal,
+ quotidianOffwhite,
+ quotidianRed,
+ quotidianYellow,
+ quotidianGreen,
  gray50,
  gray100,
  gray200,

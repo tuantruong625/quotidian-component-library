@@ -38,8 +38,8 @@ const Button = ({ label, shape, variant = 'primary', disabled, loader, icon, siz
       size={size}
       {...props}
     >
-      {icon && icon}
       {loader ? <Loader /> : label}
+      {icon && icon}
     </QuotidianButton>
   )
 };

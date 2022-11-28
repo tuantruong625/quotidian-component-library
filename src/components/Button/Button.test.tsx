@@ -12,21 +12,21 @@ const renderButton = (props?: ButtonProps) => {
  render(<Button label={BUTTON_LABEL} {...props} />)
 }
 
-describe('Button', () => {
+describe.only('Button', () => {
  describe('handles button sizes', () => {
   describe.each([
    [
     'xs',
     [
      { styleRule: 'font-size', styleProperty: Typography.xsmall },
-     { styleRule: 'padding', styleProperty: `${Spacing.size3} ${Spacing.size2}` },
+     { styleRule: 'padding', styleProperty: `${Spacing.size2} ${Spacing.size4}` },
     ]
    ],
    [
     'sm',
     [
      { styleRule: 'font-size', styleProperty: Typography.small },
-     { styleRule: 'padding', styleProperty: `${Spacing.size3} ${Spacing.size2}` },
+     { styleRule: 'padding', styleProperty: `${Spacing.size2} ${Spacing.size4}` },
     ]
    ],
    [
@@ -54,7 +54,7 @@ describe('Button', () => {
     undefined,
     [
      { styleRule: 'font-size', styleProperty: Typography.body },
-     { styleRule: 'padding', styleProperty: `${Spacing.size3} ${Spacing.size2}` },
+     { styleRule: 'padding', styleProperty: `${Spacing.size2} ${Spacing.size4}` },
     ]
    ],
   ])('button is %p', (size: any, expected: any) => {
@@ -73,7 +73,7 @@ describe('Button', () => {
    [
     'primary',
     [
-     { styleRule: 'background-color', styleProperty: Colors.gray700 },
+     { styleRule: 'background-color', styleProperty: Colors.quotidian600 },
      { styleRule: 'color', styleProperty: Colors.gray100 },
     ]
    ],

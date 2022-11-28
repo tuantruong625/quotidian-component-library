@@ -21,10 +21,10 @@ export type IconProps = {
 }
 
 export const QuotidianButton = styled.button<StyleProps>`
-  background-color: ${Colors.gray700};
+  background-color: ${Colors.quotidian600};
   padding: ${({ size }) => {
     if (size === "xs" || size === "sm" || !size) {
-      return `${Spacing.size3} ${Spacing.size2}`
+      return `${Spacing.size2} ${Spacing.size4}`
     }
     if (size === "md") {
       return `${Spacing.size3} ${Spacing.size3}`
@@ -46,24 +46,24 @@ export const QuotidianButton = styled.button<StyleProps>`
   font-size: ${({ size }) => handleButtonSize(size as string)};
 
   &:hover {
-    box-shadow: 0 1px 2px rgba(0,0,0,0.07), 
-                0 2px 4px rgba(0,0,0,0.07), 
-                0 4px 8px rgba(0,0,0,0.07), 
-                0 8px 16px rgba(0,0,0,0.07),
-                0 16px 32px rgba(0,0,0,0.07), 
-                0 32px 64px rgba(0,0,0,0.07);
-    transform: translateY(-0.25em);
+    background-color: ${Colors.gray900};
+  }
+
+  &:focus {
+    outline: 4px solid ${Colors.quotidian400};        
   }
   
   &:disabled {
-    color: ${Colors.gray300};
-    background-color: ${Colors.gray400};
+    color: ${Colors.gray500};
+    background-color: ${Colors.quotidian500};
     box-shadow: none;
     transform: translateY(0);
     cursor: not-allowed;
+    pointer-events: none;
   }
 
   &:active {
+    outline: none;
     transform: translateY(0);
     box-shadow: inset 3px 3px 2px ${Colors.black};
   }
@@ -77,6 +77,17 @@ export const QuotidianButton = styled.button<StyleProps>`
       transform: translateY(0);
       box-shadow: inset 3px 3px 2px rgba(0,0,0,0.15);
     }
+
+    &:hover {
+      background-color: ${Colors.gray900};
+      color: ${Colors.quotidian50};
+    }
+
+    &:disabled {
+      background-color: ${Colors.quotidian50};
+      color: ${Colors.gray500};
+      border: 1px solid ${Colors.quotidian100};
+    }
   `}
 
   ${({ loader, width, height }) => loader && css`
@@ -89,10 +100,16 @@ export const QuotidianButton = styled.button<StyleProps>`
     background-color: ${Colors.white};
     color: ${Colors.gray700};
 
-    &:active {
-      transform: translateY(0);
-      box-shadow: inset 3px 3px 2px rgba(0,0,0,0.15);
+    &:disabled {
+      color: ${Colors.gray500};
+      background-color: transparent;
     }
+
+    &:hover {
+      text-decoration: underline;
+      background-color: transparent;
+    }
+
   `}
 
   ${({ icon, label }) => icon && label && css`
